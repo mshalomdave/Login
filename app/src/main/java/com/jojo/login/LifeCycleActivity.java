@@ -6,35 +6,28 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
-public class TestActivity extends AppCompatActivity {
-    String TAG = "TESTACTIVITY";
+public class LifeCycleActivity extends AppCompatActivity {
+
+    String TAG = "LCACTIVITY";
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_life_cycle);
         Log.d(TAG,"We have created a Log message");
         Log.d(TAG, "The onCreate() event");
 
-        Button lcButton = findViewById(R.id.lcButton);
 
-        lcButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoLifeCycleActivity();
-            }
-        });
     }
 
-    private void gotoLifeCycleActivity() {
-        Intent intent=new Intent(TestActivity.this,LifeCycleActivity.class);
-        startActivity(intent);
-        //Allows us to close our previous activity as we open a new one
-//        finish();
-    }
+
 
     /** Called when the activity is about to become visible. */
     @Override
