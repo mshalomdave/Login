@@ -14,7 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText emailField, passwordField;
     private TextView errorText;
@@ -45,21 +45,12 @@ public class MainActivity extends AppCompatActivity {
         errorText = findViewById(R.id.errorText);
 
         Button loginButton = findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validateInput();
-            }
-        });
+
+        loginButton.setOnClickListener(this);
 
         Button registerButton = findViewById(R.id.registerButton);
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoRegister();
-            }
-        });
+        registerButton.setOnClickListener(this);
     }
 
 /*This method is for the purpose of going to the Next Activity called
@@ -102,6 +93,19 @@ Register Activity
     }
 
     private void showMessage(String message) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.loginButton) {
+            //Login Button code
+            validateInput();
+        }else{
+            //Register button code
+            Intent intent=new Intent(MainActivity.this,RegisterActivity.class);
+            startActivity(intent);
+        }
 
     }
 }
