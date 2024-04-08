@@ -4,4 +4,8 @@
     <string name="register_text">Register</string>
     <string name="test_text">Test</string>
     <string name="life_text">Life Cycle Activity</string>
+
+    <string name="text1">Text View 1</string>
+    <string name="text2">Text View 2</string>
+    <string name="text3">Text View 3</string>
 </resources>

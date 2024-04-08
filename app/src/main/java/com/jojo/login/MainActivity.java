@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_gravity);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -40,17 +40,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         //Initialized the views
-        emailField = findViewById(R.id.emailField);
-        passwordField = findViewById(R.id.passwordField);
-        errorText = findViewById(R.id.errorText);
-
-        Button loginButton = findViewById(R.id.loginButton);
-
-        loginButton.setOnClickListener(this);
-
-        Button registerButton = findViewById(R.id.registerButton);
-
-        registerButton.setOnClickListener(this);
+//        emailField = findViewById(R.id.emailField);
+//        passwordField = findViewById(R.id.passwordField);
+//        errorText = findViewById(R.id.errorText);
+//
+//        Button loginButton = findViewById(R.id.loginButton);
+//
+//        loginButton.setOnClickListener(this);
+//
+//        Button registerButton = findViewById(R.id.registerButton);
+//
+//        registerButton.setOnClickListener(this);
     }
 
 /*This method is for the purpose of going to the Next Activity called
@@ -108,4 +108,5 @@ Register Activity
         }
 
     }
+
 }
