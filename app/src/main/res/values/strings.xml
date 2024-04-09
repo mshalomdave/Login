@@ -8,4 +8,8 @@
     <string name="text1">Text View 1</string>
     <string name="text2">Text View 2</string>
     <string name="text3">Text View 3</string>
+
+    <string name="do_action">Do Action</string>
+    <string name="next">Next</string>
+    <string name="another_activity">Another Activity</string>
 </resources>

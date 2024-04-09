@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_gravity);
+        setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -40,17 +40,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         //Initialized the views
-//        emailField = findViewById(R.id.emailField);
-//        passwordField = findViewById(R.id.passwordField);
-//        errorText = findViewById(R.id.errorText);
-//
-//        Button loginButton = findViewById(R.id.loginButton);
-//
-//        loginButton.setOnClickListener(this);
-//
-//        Button registerButton = findViewById(R.id.registerButton);
-//
-//        registerButton.setOnClickListener(this);
+        emailField = findViewById(R.id.emailField);
+        passwordField = findViewById(R.id.passwordField);
+        errorText = findViewById(R.id.errorText);
+
+        Button loginButton = findViewById(R.id.loginButton);
+
+        loginButton.setOnClickListener(this);
+
+        Button registerButton = findViewById(R.id.registerButton);
+
+        registerButton.setOnClickListener(this);
     }
 
 /*This method is for the purpose of going to the Next Activity called
@@ -80,7 +80,7 @@ Register Activity
         }
 
         clearError();
-        showMessage("Login Successfully");
+        onSuccess(email);
     }
 
     private void showError(String message) {
@@ -92,8 +92,11 @@ Register Activity
         errorText.setVisibility(View.GONE);
     }
 
-    private void showMessage(String message) {
-
+    private void onSuccess(String email) {
+        //For example navigating to ProfileActivity
+        Intent intent=new Intent(MainActivity.this,NextActivity.class);
+        intent.putExtra("email",email);
+        startActivity(intent);
     }
 
     @Override
@@ -102,8 +105,8 @@ Register Activity
             //Login Button code
             validateInput();
         }else{
-            //Register button code
-            Intent intent=new Intent(MainActivity.this,RegisterActivity.class);
+            //Another Activity Button code
+            Intent intent=new Intent(MainActivity.this,SendEmailActivity.class);
             startActivity(intent);
         }
 
