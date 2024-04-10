@@ -28,8 +28,6 @@ public class SendEmailActivity extends AppCompatActivity {
             return insets;
         });
 
-        setContentView(R.layout.activity_send_email);
-
         // Getting instance of edittext and button
         sendto = findViewById(R.id.editText1);
         subject = findViewById(R.id.editText2);
