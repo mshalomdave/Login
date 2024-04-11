@@ -10,6 +10,6 @@
     </style>
     <style name="MyCustomButton" parent="android:Widget.Button">
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:backgroundTint">#FFFFFF</item>
+<!--        <item name="android:backgroundTint">#FFFFFF</item>-->
     </style>
 </resources>
