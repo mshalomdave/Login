@@ -17,6 +17,7 @@ public class SendEmailActivity extends AppCompatActivity {
 
     Button button;
     EditText sendto, subject, body;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,27 +37,29 @@ public class SendEmailActivity extends AppCompatActivity {
 
         // attach setOnClickListener to button with Intent object define in it
         button.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
-                                          String emailsend = sendto.getText().toString();
-                                          String emailsubject = subject.getText().toString();
-                                          String emailbody = body.getText().toString();
+            @Override
+            public void onClick(View v) {
+                String emailsend = sendto.getText().toString();
+                String emailsubject = subject.getText().toString();
+                String emailbody = body.getText().toString();
 
-                                          // define Intent object with action attribute as ACTION_SEND
-                                          Intent intent = new Intent(Intent.ACTION_SEND);
+                // define Intent object with action attribute as ACTION_SEND
+                Intent intent = new Intent(Intent.ACTION_SEND);
 
-                                          // add three fields to intent using putExtra function
-                                          intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailsend});
-                                          intent.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
-                                          intent.putExtra(Intent.EXTRA_TEXT, emailbody);
+                // add three fields to intent using putExtra function
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{emailsend});
+                intent.putExtra(Intent.EXTRA_SUBJECT, emailsubject);
+                intent.putExtra(Intent.EXTRA_TEXT, emailbody);
 
-//                                        // set type of intent
-                                          intent.setType("message/rfc822");
+//               set type of intent
+                intent.setType("message/rfc822");
+//              Another optional type
+//              intent.setType("text/plain");
 
-                                          // startActivity with intent with chooser as Email client using createChooser function
-                                          startActivity(Intent.createChooser(intent, "Choose an Email client :"));
+                // startActivity with intent with chooser as Email client using createChooser function
+                startActivity(Intent.createChooser(intent, "Choose an Email client :"));
 
-                                      }
-                       });
+            }
+        });
     }
 }

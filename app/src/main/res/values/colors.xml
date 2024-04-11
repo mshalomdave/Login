@@ -5,4 +5,7 @@
     <color name="red">#FFF80000</color>
     <color name="green">#FF8BC34A</color>
     <color name="blue">#FF2196F3</color>
+    <color name="colorPrimary">#2143ff</color>
+    <color name="colorPrimaryDark">#072de6</color>
+    <color name="accent">#a1a6ff</color>
 </resources>

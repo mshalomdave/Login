@@ -13,19 +13,21 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
+            android:name=".ViewPhoneActivity"
+            android:exported="false" />
+        <activity
             android:name=".NextActivity"
             android:exported="false" />
         <activity
             android:name=".ViewActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.VIEW" />-->
-
-<!--                <category android:name="android.intent.category.BROWSABLE" />-->
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-
-<!--                <data android:scheme="http" />-->
-<!--            </intent-filter>-->
+            <!--SEND INTENT FILTER-->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="message/rfc822"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
         </activity>
         <activity
             android:name=".ViewWebActivity"
@@ -50,6 +52,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
