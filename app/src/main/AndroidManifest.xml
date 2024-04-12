@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
+            android:name=".NewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DemoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViewPhoneActivity"
             android:exported="false" />
         <activity
@@ -21,12 +27,15 @@
         <activity
             android:name=".ViewActivity"
             android:exported="true">
-            <!--SEND INTENT FILTER-->
+
+            <!-- SEND INTENT FILTER -->
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="message/rfc822"/>
-                <data android:mimeType="text/plain"/>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="message/rfc822" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
         <activity
@@ -52,8 +61,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
+        <service android:name=".MyService" />
+        <service android:name=".HelloService" />
+        <service android:name=".NewService" />
     </application>
 
 </manifest>
