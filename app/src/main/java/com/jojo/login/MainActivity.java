@@ -106,7 +106,7 @@ Register Activity
             validateInput();
         }else{
             //Another Activity Button code
-            Intent intent=new Intent(MainActivity.this,NewActivity.class);
+            Intent intent=new Intent(MainActivity.this,BroadcastActivity.class);
             startActivity(intent);
         }
 
