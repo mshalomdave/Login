@@ -10,6 +10,5 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Toast.makeText(context, "Intent Detected", Toast.LENGTH_SHORT).show();
-        Log.d("MyReceiver:","Intent Detected");
     }
 }

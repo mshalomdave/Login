@@ -47,6 +47,24 @@ public class SharedActivity extends AppCompatActivity {
 
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
+        //Incase we don't want to press the set button b2,
+        // we can add this code here and it checks and sets if
+        //anything was stored
+        if(sharedpreferences.contains(Name)){
+            String user_n=sharedpreferences.getString(Name,null);
+            ed1.setText(user_n);
+        }
+        if(sharedpreferences.contains(Phone)){
+            String user_p=sharedpreferences.getString(Phone,null);
+            ed2.setText(user_p);
+        }
+        if(sharedpreferences.contains(Email)){
+            String user_e=sharedpreferences.getString(Email,null);
+            ed3.setText(user_e);
+        }else{
+            Toast.makeText(SharedActivity.this, "Nothing found", Toast.LENGTH_SHORT).show();
+        }
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,25 +79,26 @@ public class SharedActivity extends AppCompatActivity {
                 editor.putString(Email, e);
                 editor.commit();
 
-                Toast.makeText(SharedActivity.this,"Thanks",Toast.LENGTH_LONG).show();
+
+                Toast.makeText(SharedActivity.this,"Successfully saved the information.",Toast.LENGTH_LONG).show();
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String user_n=sharedpreferences.getString(Name,null);
-                String user_p=sharedpreferences.getString(Phone,null);
-                String user_e=sharedpreferences.getString(Email,null);
-                //If values were previously stored, set them in the EditTexts
-
-                if(!user_n.equals(null)){
+                if(sharedpreferences.contains(Name)){
+                    String user_n=sharedpreferences.getString(Name,null);
                     ed1.setText(user_n);
                 }
-                if(!user_p.equals(null)){
+                if(sharedpreferences.contains(Phone)){
+                    String user_p=sharedpreferences.getString(Phone,null);
                     ed2.setText(user_p);
                 }
-                if(!user_e.equals(null)){
+                if(sharedpreferences.contains(Email)){
+                    String user_e=sharedpreferences.getString(Email,null);
                     ed3.setText(user_e);
+                }else{
+                    Toast.makeText(SharedActivity.this, "Nothing found", Toast.LENGTH_SHORT).show();
                 }
             }
         });

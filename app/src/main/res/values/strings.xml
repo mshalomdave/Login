@@ -16,4 +16,11 @@
     <string name="heading">Services In Android</string>
     <string name="startButtonText">Start the Service</string>
     <string name="stopButtonText">Stop the Service</string>
+
+    <string name="heading2">Two Fragments in One Activity</string>
+    <string name="fragment1_button">Display First Fragment</string>
+    <string name="fragment2_button">Display Second Fragment</string>
+    <string name="fragment1_text1">Displaying contents of the First Fragment</string>
+    <string name="fragment2_text1">Displaying contents of the Second Fragment</string>
+
 </resources>
