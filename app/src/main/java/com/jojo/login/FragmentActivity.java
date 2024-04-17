@@ -1,5 +1,6 @@
 package com.jojo.login;
 
+import android.app.PendingIntent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,7 @@ public class FragmentActivity extends AppCompatActivity {
                 selectFragment(v);
             }
         });
+
     }
 
 
