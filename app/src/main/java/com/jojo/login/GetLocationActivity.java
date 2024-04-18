@@ -82,10 +82,10 @@ public class GetLocationActivity extends AppCompatActivity {
     }
 
     private void goToMaps() {
-//        This works but I wish to display the latitude and longitude my Google Maps
+//        This views but doesn't display the latitude and longitude on Google Maps
 //        Uri gmmIntentUri = Uri.parse("geo:"+lat+","+lon);
 
-        //With this I can view the latitude and longitude in my Google Maps
+        //With this you can view the latitude and longitude on Google Maps
         Uri mapUri = Uri.parse("geo:0,0?q="+lat+","+lon);
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapUri);
         mapIntent.setPackage("com.google.android.apps.maps");
