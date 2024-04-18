@@ -21,7 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class NotificationActivity extends AppCompatActivity {
 
-    Button b1;
+    Button b1,b2;
     protected static final int ID_BIG_NOTIFICATION = 10134;
     protected static final int ID_SMALL_NOTIFICATION = 10135;
     protected static final String ID_CHANNEL = "general_id";
@@ -40,8 +40,15 @@ public class NotificationActivity extends AppCompatActivity {
         });
 
         b1 = (Button)findViewById(R.id.button);
+        b2 = (Button)findViewById(R.id.button2);
         createNotificationChannel();
         b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNotification();
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 displayNotification();
@@ -66,7 +73,7 @@ public class NotificationActivity extends AppCompatActivity {
 
     private void addNotification() {
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this,ID_CHANNEL).setSmallIcon(R.drawable.ic_launcher_foreground)
+                new NotificationCompat.Builder(this,ID_CHANNEL).setSmallIcon(R.drawable.logo2)
                         .setContentTitle("Notifications Example")
                         .setContentText("This is a test notification");
 
@@ -84,7 +91,7 @@ public class NotificationActivity extends AppCompatActivity {
         Log.i("Start", "notification");
 
         /* Invoking the default notification service */
-        NotificationCompat.Builder  mBuilder = new NotificationCompat.Builder(this,ID_CHANNEL);
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this,ID_CHANNEL);
 
         mBuilder.setContentTitle("New Message");
         mBuilder.setContentText("You've received new message.");

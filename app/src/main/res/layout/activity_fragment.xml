@@ -45,7 +45,6 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="#4CAF50"
-        android:onClick="selectFragment"
         android:text="@string/fragment2_button"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
