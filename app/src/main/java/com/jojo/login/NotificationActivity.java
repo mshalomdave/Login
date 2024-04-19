@@ -77,7 +77,7 @@ public class NotificationActivity extends AppCompatActivity {
                         .setContentTitle("Notifications Example")
                         .setContentText("This is a test notification");
 
-        Intent notificationIntent = new Intent(this, FragmentActivity.class);
+        Intent notificationIntent = new Intent(this, FragmentsActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);

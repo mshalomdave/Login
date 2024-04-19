@@ -7,7 +7,7 @@
     android:background="#168BC34A"
     android:orientation="vertical"
     android:id="@+id/main"
-    tools:context=".FragmentActivity">
+    tools:context=".FragmentsActivity">
 
     <!-- Heading of the activity -->
     <TextView

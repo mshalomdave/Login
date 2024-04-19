@@ -36,7 +36,6 @@ public class GetLocationActivity extends AppCompatActivity {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 2;
     TextView textView;
     double lat;
-
     double lon;
 
     @Override
@@ -112,7 +111,7 @@ public class GetLocationActivity extends AppCompatActivity {
                                 //Get Latitude and longitude of type double
                                 lat= location.getLatitude();
                                 lon= location.getLongitude();
-                                textView.setText("Latitude is:"+lat+"\n"+"Longitude is:"+lon);
+                                textView.setText("Current Location:\nLatitude is-"+lat+"\n"+"Longitude is-"+lon);
 
                             }
                         }
@@ -138,7 +137,7 @@ public class GetLocationActivity extends AppCompatActivity {
                                 //Get Latitude and longitude of type double
                                 lat= location.getLatitude();
                                 lon= location.getLongitude();
-                                textView.setText("Latitude is:"+lat+"\n"+"Longitude is:"+lon);
+                                textView.setText("Last Location:\nLatitude is-"+lat+"\n"+"Longitude is-"+lon);
 
                             }
                         }

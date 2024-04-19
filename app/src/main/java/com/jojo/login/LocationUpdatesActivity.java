@@ -30,9 +30,9 @@ public class LocationUpdatesActivity extends AppCompatActivity {
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 3;
 
     TextView textView;
-    String lat;
+    double lat;
 
-    String lon;
+    double lon;
     Boolean requestingLocationUpdates=false;
     private LocationCallback locationCallback;
 
@@ -65,8 +65,8 @@ public class LocationUpdatesActivity extends AppCompatActivity {
 
                 //This is for getting the last location update
                 Location location=locationResult.getLastLocation();
-                lat= String.valueOf(location.getLatitude());
-                lon= String.valueOf(location.getLongitude());
+                lat=location.getLatitude();
+                lon=location.getLongitude();
                 textView.setText("Latitude is:"+lat+"\n"+"Longitude is:"+lon);
 
             }
@@ -84,6 +84,7 @@ public class LocationUpdatesActivity extends AppCompatActivity {
             LocationRequest locationRequest = new LocationRequest.Builder(5000)
                     .setPriority(Priority.PRIORITY_HIGH_ACCURACY)
                     .build();
+
 
             fusedLocationClient.requestLocationUpdates(locationRequest,
                     locationCallback,
