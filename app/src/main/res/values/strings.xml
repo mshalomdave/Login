@@ -25,5 +25,7 @@
     <string name="channel_name">General</string>
     <string name="channel_description">This channel is for notifications related to the general app usage</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="new_game">New Game</string>
+    <string name="help">Help</string>
 
 </resources>

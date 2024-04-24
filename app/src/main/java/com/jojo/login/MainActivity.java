@@ -106,7 +106,7 @@ Register Activity
             validateInput();
         }else{
             //Another Activity Button code
-            Intent intent=new Intent(MainActivity.this,AnotherViewPagerActivity.class);
+            Intent intent=new Intent(MainActivity.this,LinkifyActivity.class);
             startActivity(intent);
         }
 

@@ -8,11 +8,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class DemoCollectionAdapter extends FragmentStateAdapter {
-
+    int tabcount=3;
     public DemoCollectionAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
-//
-
     }
 
     @NonNull
@@ -29,6 +27,6 @@ public class DemoCollectionAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return tabcount;
     }
 }
