@@ -106,7 +106,7 @@ Register Activity
             validateInput();
         }else{
             //Another Activity Button code
-            Intent intent=new Intent(MainActivity.this,AnotherCameraActivity.class);
+            Intent intent=new Intent(MainActivity.this,ScanWifiActivity.class);
             startActivity(intent);
         }
 
